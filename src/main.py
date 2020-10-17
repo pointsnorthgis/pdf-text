@@ -14,7 +14,7 @@ from pdfminer.pdfparser import PDFParser
 
 
 class PdfText(object):
-    def __init__(self, pdf_path, password=None):
+    def __init__(self, pdf_path=None, password=None):
         self.pdf_path = pdf_path
         self.pdf_password = password
 
@@ -30,3 +30,4 @@ class PdfText(object):
                 interpreter.process_page(page)
                 
             print(output_string.getvalue())
+        return True
