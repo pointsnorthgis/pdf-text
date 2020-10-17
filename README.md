@@ -1,5 +1,5 @@
 # pdf-text
-*Program for extracting text from pdf*
+##Program for extracting text from pdf
 
 [pytesseract](https://pypi.org/project/pytesseract/) is an OCR library that will extract text from images.
 
