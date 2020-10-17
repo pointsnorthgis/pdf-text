@@ -37,9 +37,3 @@ class PdfText(object):
                 interpreter.process_page(page)
                 
             return output_string
- 
-
-if __name__ == '__main__':
-    pdf_path = r'C:\dev\pdf-text\test_data\howto-argparse.pdf'
-    parser = PdfText(pdf_path=pdf_path)
-    parser.parse_pdf()
