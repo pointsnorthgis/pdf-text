@@ -18,6 +18,13 @@ class PdfText(object):
         self.pdf_path = pdf_path
         self.pdf_password = password
 
+    def get_pdf_string(self):
+        string_io = self.parse_pdf()
+        self.pdf_string = string_io.getvalue()
+
+    def get_pdf_words(self):
+        self.pdf_words = self.pdf_string.split()
+
     def parse_pdf(self):
         output_string = StringIO()
         with open(self.pdf_path, 'rb') as in_file:
@@ -29,5 +36,10 @@ class PdfText(object):
             for page in PDFPage.create_pages(doc):
                 interpreter.process_page(page)
                 
-            print(output_string.getvalue())
-        return True
+            return output_string
+ 
+
+if __name__ == '__main__':
+    pdf_path = r'C:\dev\pdf-text\test_data\howto-argparse.pdf'
+    parser = PdfText(pdf_path=pdf_path)
+    parser.parse_pdf()
