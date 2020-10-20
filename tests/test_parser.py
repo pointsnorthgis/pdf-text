@@ -13,9 +13,9 @@ class TestParser(unittest.TestCase):
         self.assertIsInstance(
             self.pdf_parser.parse_pdf(), io.StringIO
             )
-        self.pdf_parser.get_pdf_string()
+        self.assertIsInstance(self.pdf_parser.get_pdf_string(), str)
         self.assertIsInstance(self.pdf_parser.pdf_string, str)
-        self.pdf_parser.get_pdf_words()
+        self.assertIsInstance(self.pdf_parser.get_pdf_words(), list)
         self.assertIsInstance(self.pdf_parser.pdf_words, list)
 
 
