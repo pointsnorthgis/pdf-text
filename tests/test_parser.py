@@ -8,7 +8,7 @@ class TestParser(unittest.TestCase):
         self.pdf_parser = PdfText()
 
     def test_pdf_text(self):
-        pdf_path = r'C:\dev\pdf-text\test_data\howto-argparse.pdf'
+        pdf_path = './test_data/howto-argparse.pdf'
         self.pdf_parser.pdf_path = pdf_path
         self.assertIsInstance(
             self.pdf_parser.parse_pdf(), io.StringIO
