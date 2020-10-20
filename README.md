@@ -19,7 +19,7 @@ $ (env)> pip install tesseract
 '''
 
 
-[pdfminer3](https://github.com/gwk/pdfminer3) will extract text from a pdf containing text that is not in image format.
+[pdfminer.six](https://github.com/pdfminer/pdfminer.six) will extract text from a pdf containing text that is not in image format.
 
 
 
