@@ -5,7 +5,7 @@ Program for extracting text from pdf
 Dependencies
 --------
 ## [pytesseract](https://pypi.org/project/pytesseract/) 
-An Optical Character Recognition (OCR) library that will extract text from images. This library requires the [Python Image Library (PIL)](https://pillow.readthedocs.io/en/stable/) to be installed on the system as well as [Google Tesseract OCR](https://github.com/tesseract-ocr/tesseract), which powers the character recognition.pip. [pdf2image](https://github.com/Belval/pdf2image) converts PDFs to images that OCR can work on.
+An Optical Character Recognition (OCR) library that will extract text from images. This library requires the [Python Image Library (PIL)](https://pillow.readthedocs.io/en/stable/) to be installed on the system as well as [Google Tesseract OCR](https://github.com/tesseract-ocr/tesseract), which powers the character recognition. [pdf2image](https://github.com/Belval/pdf2image) converts PDFs to images that OCR can work on.
 
 ### Install PIL (Linux)
 `~$> sudo apt-get install python3-pil`
