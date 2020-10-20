@@ -18,7 +18,7 @@ Dependencies
 
 
 [pdfminer.six](https://github.com/pdfminer/pdfminer.six) will extract text from a pdf containing text that is not in image format.
-
+`$ (env)> pip install pdfminer.six`
 
 
 Other options for extracting text from PDFs are:
