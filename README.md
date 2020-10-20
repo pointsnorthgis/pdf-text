@@ -9,12 +9,14 @@ Dependencies
 ### Install PIL (Linux)
 `
 ~$> sudo apt-get install python3-pil
+
 $ (env)> pip install pillow
 `
 
 ### Install tesseract (Linux)
 `
 ~$> sudo apt-get install tesseract-ocr
+
 $ (env)> pip install tesseract
 `
 
