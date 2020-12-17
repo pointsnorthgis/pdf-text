@@ -13,6 +13,7 @@ pycparser==2.20
 pycryptodome==3.9.8
 pylint==2.6.0
 pytesseract==0.3.6
+python-poppler==0.2.2
 six==1.15.0
 sortedcontainers==2.2.2
 toml==0.10.1
