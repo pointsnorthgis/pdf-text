@@ -25,6 +25,7 @@ class PdfText(object):
         self.pdf_string = None
         self.pdf_words = None
         self.pdf_is_image = False
+        self.save_path = None
 
     def get_pdf_string(self):
         string_io = self.parse_pdf()
@@ -55,10 +56,12 @@ class PdfText(object):
 
     def write_to_text(self, save_path=None):
         '''Create a text file from the pdf string'''
-        if not save_path:
-            save_path = os.path.splitext(self.pdf_path)[0] + '.txt'
+        if not save_path and not self.save_path:
+            self.save_path = os.path.splitext(self.pdf_path)[0] + '.txt'
+        elif self.save_path is None and save_path is not None:
+            self.save_path = save_path
         
-        with open(save_path, "w") as txt_file:
+        with open(self.save_path, "w") as txt_file:
             self.get_pdf_string()
             txt_file.write(self.pdf_string)
 
@@ -133,10 +136,11 @@ if __name__ == "__main__":
         raise Exception("Enter only one output text file")
     else:
         out_file = args.output[0]
-        if os.path.splitext(out_file) != '.txt':
+        if os.path.splitext(out_file)[1] != '.txt':
             raise Exception("Output file must be .txt format")
 
     pdf2txt = PdfText(pdf_path=pdf[0])
     pdf2txt.get_pdf_string()
+    pdf2txt.write_to_text(save_path=out_file)
     print("Complete")
     pass
