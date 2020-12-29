@@ -65,7 +65,7 @@ class PdfText(object):
             self.get_pdf_string()
             txt_file.write(self.pdf_string)
 
-        return save_path
+        return self.save_path
 
     def ocr_pdf(self):
         '''
@@ -118,7 +118,7 @@ if __name__ == "__main__":
         '''
         )
     parser.add_argument(
-        '--output', type=str, nargs=1, required=True,
+        '--output', type=str, nargs=1, required=False,
         help='''
         Text file output location and name
         '''
