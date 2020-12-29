@@ -108,10 +108,16 @@ if __name__ == "__main__":
     '''Commandline function for turning a pdf into a text file'''
     parser = argparse.ArgumentParser(description='Extract text from pdf.')
     parser.add_argument(
-        '--pdf', type=str, nargs=1, required=False,
+        '--pdf', type=str, nargs=1, required=True,
         help='''
         Use the --pdf flag to enter a PDF file to split into multiple pages 
         or enter multiple pdf documents to merge into a single pdf.
+        '''
+        )
+    parser.add_argument(
+        '--output', type=str, nargs=1, required=True,
+        help='''
+        Text file output location and name
         '''
         )
     args = parser.parse_args()
@@ -122,8 +128,14 @@ if __name__ == "__main__":
                 raise Exception("Only include PDF Files")
             if not os.path.isfile(pdf_file):
                 raise Exception("Ensure PDF files exist")
-
     
+    if len(args.output) > 1:
+        raise Exception("Enter only one output text file")
+    else:
+        out_file = args.output[0]
+        if os.path.splitext(out_file) != '.txt':
+            raise Exception("Output file must be .txt format")
+
     pdf2txt = PdfText(pdf_path=pdf[0])
     pdf2txt.get_pdf_string()
     print("Complete")
