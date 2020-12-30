@@ -1,7 +1,6 @@
 # pdf-text
 Program for extracting text from pdf
 
-
 Dependencies
 --------
 ## [pytesseract](https://pypi.org/project/pytesseract/) 
@@ -52,3 +51,11 @@ Other options for extracting text from PDFs are:
 [pdfplumber](https://github.com/jsvine/pdfplumber)
 
 [textract](https://textract.readthedocs.io/en/stable/python_package.html)
+
+
+Usage
+--------
+### How to run PDF-TEXT using commandline
+1. Install above dependancies
+2. Using python run:
+    `$ (env)> python --pdf /path/to/pdf/pdf_file.pdf --output /path/to/pdf/out_text.txt`
