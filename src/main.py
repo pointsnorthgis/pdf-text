@@ -132,12 +132,15 @@ if __name__ == "__main__":
             if not os.path.isfile(pdf_file):
                 raise Exception("Ensure PDF files exist")
     
-    if len(args.output) > 1:
-        raise Exception("Enter only one output text file")
+    if args.output:
+        if len(args.output) > 1:
+            raise Exception("Enter only one output text file")
+        else:
+            out_file = args.output[0]
+            if os.path.splitext(out_file)[1] != '.txt':
+                raise Exception("Output file must be .txt format")
     else:
-        out_file = args.output[0]
-        if os.path.splitext(out_file)[1] != '.txt':
-            raise Exception("Output file must be .txt format")
+        out_file = None
 
     pdf2txt = PdfText(pdf_path=pdf[0])
     pdf2txt.get_pdf_string()
