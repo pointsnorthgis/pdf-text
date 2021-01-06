@@ -27,9 +27,15 @@ class PdfText(object):
         self.pdf_is_image = False
         self.save_path = None
 
+    @staticmethod
+    def _clean_pdf_string(pdf_string):
+        pdf_string = pdf_string.replace('\x0c', '')
+        return pdf_string
+
     def get_pdf_string(self):
         string_io = self.parse_pdf()
         pdf_string = string_io.getvalue()
+        pdf_string = self._clean_pdf_string(pdf_string)
         if pdf_string == '\x0c':
             pdf_string = ''
         if len(pdf_string) > 0:
