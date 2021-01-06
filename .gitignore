@@ -130,3 +130,6 @@ dmypy.json
 
 # VS Code Stuff
 .vscode/
+
+# Test Data
+test_data/extra/
